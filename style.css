@@ -1,0 +1,28 @@
+body{
+  box-sizing: border-box;
+  background: url(https://kaboompics.com/cache/7/2/3/6/9/72369f841aa0c5afd94c619bc35e6b08d9fd738e.jpeg?version=v23) center no-repeat;
+  background-size: cover;
+  min-height: 100vh; //vertical height
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial;
+}
+*, *:before, *:after {box-sizing: inherit;}
+
+.container{
+  background-color: rgba(130,138,117,0.4);
+}
+
+.recipeBtn {
+ padding-top: 20px;
+}
+
+.card{
+  background: black;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2em;
+  button{color: black}
+}

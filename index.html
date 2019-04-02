@@ -1,0 +1,66 @@
+<html >
+<head>
+
+<meta charset="UTF-8">
+  <title>Angular Recipe App</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div ng-app="recipeBoxApp" ng-controller="recipeBoxCtrl">
+
+ <div class="container">
+  <!-- Row is devided in the list of recipes and add a new one -->
+  <div class="row">
+   <!-- Left - list with edit/delete-->
+   <div class="col-xs-8">
+    <ul class="collapsible" data-collapsible="accordion">
+     <li ng-repeat="recipe in recipeList | filter track by $index">
+      <div class="collapsible-header">{{recipe.title}}</div>
+      <div class="collapsible-body">
+       <div>{{recipe.ingredients}}</div>
+       <div class="recipeBtn">
+        <button ng-click="editRecipe($index)">Edit</button>
+        <button ng-click="deleteRecipe($index)">Delete</button>
+       </div>
+      </div>
+     </li>
+    </ul>
+   </div>
+
+   <!-- Right - add recipe -->
+   <div class="col-xs-4">
+    <div class="card">
+     <div class="card-content">
+      New recipe
+      <form ng-submit="addRecipe()">
+       <div class="input-field">
+        <input type="text" ng-model="newRecipe" placeholder="Name">
+       </div>
+       <div class="input-field">
+        <input type="text" ng-model="newIngredients" placeholder="Ingredients (Seperate by commas)">
+       </div>      
+       <button type="submit">Add</button>
+      </form>
+     </div>
+    </div>
+   </div> <!-- column -->
+  </div> <!-- row -->
+ </div> <!--container -->
+</div> <!-- app -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
